@@ -1,0 +1,37 @@
+-# .chat-main
+-#   .chat-main__header
+-#     .chat-main__header__main
+-#       .left
+-#         %h2.group-about
+-#           グループ概要
+-#         %ul.member-list
+-#           member:
+-#           %li
+-#           = link_to "#", class: "member-name" do
+-#             tanaka
+-#           %li
+-#           = link_to "#", class: "member-name" do
+-#             tanaka
+-#       .main__header__edit-btn
+-#         = link_to "#" do
+-#           Edit
+
+-#   .messages
+-#     .message
+-#       .message__info
+-#         %p.message__info__talker
+-#           tanaka
+-#         %p.message__info__date
+-#           2019/12/11(Wed) 11:45:09
+-#       %p.message__text
+-#         Hello
+
+
+-#   .form
+-#       = form_for [@group, @message] do |f|
+-#         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+-#         .form__mask
+-#           = f.label :image, class: 'form__mask__image' do
+-#             = icon('fas', 'image', class: 'icon')
+-#             = f.file_field :image, class: 'hidden'
+-#         = f.submit 'Send', class: 'form__submit'
