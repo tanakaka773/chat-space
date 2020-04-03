@@ -1,23 +1,29 @@
-.chat-side
+.side-bar
   .header
-    .header__box
-      %p.header__box__user-name
-        = current_user.name
-      %ul.header__box__menu
-        %li.header__box__menu__new-group
+    %h3.header__name
+      = current_user.name
+    %ul.header__lists
+      %li.list
         = link_to new_group_path do
-          = icon('fa', 'edit')
-          %span<>
-        %li.header__box__menu__edit-user
+          = icon('fa', 'edit', class: 'icon')
+      %li.list
         = link_to edit_user_path(current_user) do
-          = icon('fa', 'cog', class: 'icon')
-          %span<>
- 
+          = icon('fas', 'cog', class: 'icon')
+  
   .groups
     - current_user.groups.each do |group|
-      = link_to "#" , class: "group" do
-        %p.group__group-name
-          = group.name
-        %p.group__group-message
-          まだメッセージはありません
+      .group
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            = group.show_last_message 
+      
+
+
+
+
+
+
+
       
